@@ -2,7 +2,7 @@
 <p align="center">
   <a href="" target="_blank">
     <img width="20%" src="https://www.sii.cl/sobre_el_sii/logoSII250x108.jpg" alt="Azure Function">
-  </a>
+  </a>  
 </p>
 <br />
 <p align="center">
@@ -24,7 +24,9 @@
 </p>
 <br />
 
-This solution tries to show how to access the information published by the [Servicio de Impuestos Internos](https://www.sii.cl/) through SOAP / REST services. The services are packaged in "Library Class" and can be accessed through Dependency Injection.
+This solution tries to show how to access the information published by the [Servicio de Impuestos Internos](https://www.sii.cl/) through SOAP services. The services are packaged in "Library Class" and can be accessed through Dependency Injection.
+
+It should be noted that this repository has no relationship with the government entity, only for educational purposes.
 
 
 ### 📝&nbsp; Details
@@ -64,28 +66,16 @@ Aceptación/Reclamo a DTE recibido](https://www.sii.cl/factura_electronica/Webse
 
 This class is accessed via dependency injection:
 
-
- 
- his function can be hosted on a server and called from a POST request, upload the file and wait for the result. The file is uploaded to the Sharepoint site (linked to OneDrive) and when downloaded, the [Graph](https://learn.microsoft.com/en-us/graph/overview) tool automatically converts it into a PDF document. 
-
-These are the [supported](https://learn.microsoft.com/en-us/graph/api/driveitem-get-content-format?view=graph-rest-1.0&tabs=http#format-options) files:
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left;">Format value</th>
-      <th style="text-align: left;">Description</th>
-      <th>Supported source extensions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left;">pdf</td>
-      <td style="text-align: left;">Converts the item into PDF format.</td>
-      <td>csv, doc, docx, odp, ods, odt, pot, potm, potx, pps, ppsx, ppsxm, ppt, pptm, pptx, rtf, xls, xlsx</td>
-    </tr>
-  </tbody>
-</table>
+```C#
+IHost host = Host.CreateDefaultBuilder()
+                .SoapRequestBuild() // This is important!
+                .ConfigureServices(
+                    (c, s) => {
+                        // your config
+                    }
+                )
+                .Build();
+```
 
 ### 📫&nbsp; Have a question? Found a Bug? 
 
