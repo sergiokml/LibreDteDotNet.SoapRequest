@@ -10,11 +10,17 @@ using System.Xml.Linq;
 using System.Security.Cryptography.Xml;
 using LibreDteDotNet.SoapRequest.Static;
 
-namespace LibreDteDotNet.SoapRequest
+namespace LibreDteDotNet.SoapRequest.Services
 {
     public class TokenRequest
     {
         private const string DOCUMENTO = "<getToken><item><Semilla>{0}</Semilla></item></getToken>";
+        private string? Rut { get; set; }
+
+        public TokenRequest(string rut)
+        {
+            Rut = rut;
+        }
 
         public async Task<string> GetToken()
         {
@@ -49,10 +55,10 @@ namespace LibreDteDotNet.SoapRequest
             return null!;
         }
 
-        private static string FirmarXml(string documento)
+        private string FirmarXml(string documento)
         {
             // https://www.sii.cl/factura_electronica/factura_mercado/autenticacion.pdf
-            X509Certificate2 x509 = Extension.GetCertFromPc("");
+            X509Certificate2 x509 = Extension.GetCertFromPc(Rut!);
             RSA? privateKey = x509.GetRSAPrivateKey();
             try
             {
