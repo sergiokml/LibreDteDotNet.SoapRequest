@@ -8,7 +8,6 @@ using System.ServiceModel;
 using System.Xml;
 using System.Xml.Linq;
 using System.Security.Cryptography.Xml;
-using LibreDteDotNet.SoapRequest.Static;
 
 namespace LibreDteDotNet.SoapRequest.Services
 {
@@ -58,7 +57,7 @@ namespace LibreDteDotNet.SoapRequest.Services
         private string FirmarXml(string documento)
         {
             // https://www.sii.cl/factura_electronica/factura_mercado/autenticacion.pdf
-            X509Certificate2 x509 = Extension.GetCertFromPc(Rut!);
+            X509Certificate2 x509 = GetCertFromPc(Rut!);
             RSA? privateKey = x509.GetRSAPrivateKey();
             try
             {
@@ -99,6 +98,21 @@ namespace LibreDteDotNet.SoapRequest.Services
             {
                 throw;
             }
+        }
+
+        internal static X509Certificate2 GetCertFromPc(string rut)
+        {
+            X509Store store = new(StoreName.My, StoreLocation.CurrentUser);
+            store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+            var cert = store.Certificates
+                .Where(c => c.Subject.Contains(rut) && c.NotAfter > DateTime.Now)
+                .FirstOrDefault();
+            store.Close();
+            if (cert == null)
+            {
+                throw new Exception($"No existe certificado válido para este rut: {rut}.");
+            }
+            return cert!;
         }
     }
 }
