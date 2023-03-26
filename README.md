@@ -77,6 +77,16 @@ IHost host = Host.CreateDefaultBuilder()
                 .Build();
 ```
 
+
+---
+Function : GetToken
+```C#
+var tokenrequest = new TokenRequest("16000555-2");
+var tkn = await tokenrequest.GetToken();
+```
+
+
+---
 ### 📫&nbsp; Have a question? Found a Bug? 
 
 Feel free to **file a new issue** with a respective title and description on the [FunctionPdfConvert/issues](https://github.com/sergiokml/FunctionPdfConvert/issues) repository.
