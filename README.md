@@ -9,17 +9,17 @@
   <a href="LICENSE.txt" target="_blank">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="">
   </a>
-  <a href="https://github.com/sergiokml/FunctionPdfConvert/releases" target="_blank">
-    <img src="https://img.shields.io/github/tag/sergiokml/FunctionPdfConvert.svg" alt="">
+  <a href="https://github.com/sergiokml/LibreDteDotNet.SoapRequest/releases" target="_blank">
+    <img src="https://img.shields.io/github/tag/sergiokml/LibreDteDotNet.SoapRequest.svg" alt="">
   </a>
   <a href="https://github.com/sergiokml/" target="_blank">
-    <img src="https://img.shields.io/github/commit-activity/y/sergiokml/FunctionPdfConvert.svg" alt="">
+    <img src="https://img.shields.io/github/commit-activity/y/sergiokml/LibreDteDotNet.SoapRequest.svg" alt="">
   </a>
-  <a href="https://github.com/sergiokml/FunctionPdfConvert/contributors" target="_blank">
-    <img src="https://img.shields.io/github/contributors-anon/sergiokml/FunctionPdfConvert.svg" alt="">
+  <a href="https://github.com/sergiokml/LibreDteDotNet.SoapRequest/contributors" target="_blank">
+    <img src="https://img.shields.io/github/contributors-anon/sergiokml/LibreDteDotNet.SoapRequest.svg" alt="">
   </a>
-  <a href="https://github.com/sergiokml/FunctionPdfConvert/releases" target="_blank">
-    <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/sergiokml/FunctionPdfConvert/total">
+  <a href="https://github.com/sergiokml/LibreDteDotNet.SoapRequest/releases" target="_blank">
+    <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/sergiokml/LibreDteDotNet.SoapRequest/total">
   </a> 
 </p>
 <br />
@@ -89,7 +89,7 @@ var tkn = await tokenrequest.GetToken();
 ---
 ### 📫&nbsp; Have a question? Found a Bug? 
 
-Feel free to **file a new issue** with a respective title and description on the [FunctionPdfConvert/issues](https://github.com/sergiokml/FunctionPdfConvert/issues) repository.
+Feel free to **file a new issue** with a respective title and description on the [LibreDteDotNet.SoapRequest/issues](https://github.com/sergiokml/LibreDteDotNet.SoapRequest/issues) repository.
 
 ### ❤️&nbsp; Community and Contributions
 
