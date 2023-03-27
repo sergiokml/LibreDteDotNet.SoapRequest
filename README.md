@@ -1,52 +1,28 @@
-﻿<br />
-<p align="center">
-  <a href="" target="_blank">
-    <img width="20%" src="https://www.sii.cl/sobre_el_sii/logoSII250x108.jpg" alt="Azure Function">
-  </a>  
-</p>
-<br />
-<p align="center">
-  <a href="LICENSE.txt" target="_blank">
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="">
-  </a>
-  <a href="https://github.com/sergiokml/LibreDteDotNet.SoapRequest/releases" target="_blank">
-    <img src="https://img.shields.io/github/tag/sergiokml/LibreDteDotNet.SoapRequest.svg" alt="">
-  </a>
-  <a href="https://github.com/sergiokml/" target="_blank">
-    <img src="https://img.shields.io/github/commit-activity/y/sergiokml/LibreDteDotNet.SoapRequest.svg" alt="">
-  </a>
-  <a href="https://github.com/sergiokml/LibreDteDotNet.SoapRequest/contributors" target="_blank">
-    <img src="https://img.shields.io/github/contributors-anon/sergiokml/LibreDteDotNet.SoapRequest.svg" alt="">
-  </a>
-  <a href="https://github.com/sergiokml/LibreDteDotNet.SoapRequest/releases" target="_blank">
-<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/sergiokml/LibreDteDotNet.SoapRequest/total">
-  </a> 
-</p>
-<br />
+﻿![](https://user-images.githubusercontent.com/6364350/227820028-916b3bf1-29b1-406d-8b80-99d27df2b262.png)
+
+[![](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
+[![](https://img.shields.io/github/tag/sergiokml/LibreDteDotNet.SoapRequest.svg)](https://github.com/sergiokml/LibreDteDotNet.SoapRequest/releases)
+[![](https://img.shields.io/github/commit-activity/y/sergiokml/LibreDteDotNet.SoapRequest.svg)](https://github.com/sergiokml/)
+[![](https://img.shields.io/github/contributors-anon/sergiokml/LibreDteDotNet.SoapRequest.svg)](https://github.com/sergiokml/LibreDteDotNet.SoapRequest/contributors)
+[![](https://img.shields.io/github/downloads/sergiokml/LibreDteDotNet.SoapRequest/total.svg)](releases)
+
 This solution tries to show how to access the information published by the [Servicio de Impuestos Internos](https://www.sii.cl/) through SOAP services. The services are packaged in "Library Class" and can be accessed through Dependency Injection.
 
 It should be noted that this repository has no relationship with the government entity, only for educational purposes.
 
 
 ### 📝&nbsp; Details
-
-<table>
-  <thead>
-  </thead>
-  <tbody>
-    <tr>   
-      <td style="text-align: left;">Framework .Net 6.0</td>      
-    </tr>
-    <tr>    
-      <td style="text-align: left;">Security.Cryptography.Xml 7.0.1</td>      
-    </tr>      
-  </tbody>
-</table>
-
+||
+|:--|
+| Framework .Net 6.0 |
+| Autofac 7.0.0 |
+| Autofac.Extensions.DependencyInjection 8.0.0 |
+| Security.Cryptography.Xml 7.0.1 |
 
 ### ✅&nbsp; Requirements
 
 + Framework .Net >= 5.0.
++ Autofac Framework.
 
 ### 🛠 RoadMap
 
