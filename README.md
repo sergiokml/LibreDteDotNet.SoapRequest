@@ -58,8 +58,7 @@ IHost host = Host.CreateDefaultBuilder()
 ---
 Function : GetToken
 ```C#
-var tokenrequest = new TokenRequest("16000555-2");
-var tkn = await tokenrequest.GetToken();
+var tkn = await soapRequest.TokenSeedService.GetToken("16000555-2");
 ```
 ---
 ### 📫&nbsp; Have a question? Found a Bug? 
