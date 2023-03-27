@@ -5,8 +5,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-	  <Version>1.1.1</Version>
 	  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Version>1.1.2</Version>
+	  <RepositoryUrl>https://github.com/sergiokml/LibreDteDotNet.SoapRequest</RepositoryUrl>
+	  <PackageTags>sii,siichile,libredte,dte,xml,firma,electronica,servicio,impuestos,internos</PackageTags>
+	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	  <PackageProjectUrl>https://github.com/sergiokml/LibreDteDotNet.SoapRequest</PackageProjectUrl>
+	  <Authors>sergiokml</Authors>
   </PropertyGroup>
 
   <ItemGroup>
