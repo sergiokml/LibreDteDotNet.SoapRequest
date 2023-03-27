@@ -4,8 +4,12 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/)
 [![GitHub contributors](https://img.shields.io/github/contributors/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/)
 
+
 [![Nuget](https://img.shields.io/nuget/v/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://www.nuget.org/packages/LibreDteDotNet.SoapRequest/)
 [![Nuget](https://img.shields.io/nuget/dt/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://www.nuget.org/packages/LibreDteDotNet.SoapRequest/)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)
+
 
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](../../releases/latest)
 [![GitHub all releases](https://img.shields.io/github/downloads/sergiokml/LibreDteDotNet.SoapRequest/total?style=for-the-badge)](../../releases)
