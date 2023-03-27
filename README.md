@@ -51,13 +51,13 @@ This class is accessed via dependency injection:
 
 ```C#
 IHost host = Host.CreateDefaultBuilder()
-                .SoapRequestBuild() // This is important!
-                .ConfigureServices(
-                    (c, s) => {
-                        // your config
-                    }
-                )
-                .Build();
+  .SoapRequestBuild() // This is important!
+  .ConfigureServices(
+    (c, s) => {
+      // your config
+    }
+  )
+  .Build();
 ```
 ---
 Function : GetToken
