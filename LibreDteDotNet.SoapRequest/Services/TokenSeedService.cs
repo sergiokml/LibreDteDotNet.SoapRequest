@@ -8,20 +8,15 @@ using System.ServiceModel;
 using System.Xml;
 using System.Xml.Linq;
 using System.Security.Cryptography.Xml;
+using LibreDteDotNet.SoapRequest.Interfaces;
 
 namespace LibreDteDotNet.SoapRequest.Services
 {
-    public class TokenRequest
+    public class TokenSeedService : ITokenSeedService
     {
         private const string DOCUMENTO = "<getToken><item><Semilla>{0}</Semilla></item></getToken>";
-        private string? Rut { get; set; }
 
-        public TokenRequest(string rut)
-        {
-            Rut = rut;
-        }
-
-        public async Task<string> GetToken()
+        public async Task<string> GetToken(string rut)
         {
             CrSeedClient semilla = new();
             GetTokenFromSeedClient token = new();
@@ -32,7 +27,7 @@ namespace LibreDteDotNet.SoapRequest.Services
                 {
                     string xml = GetElement(seed, "SEMILLA");
                     string xmlNofirmado = string.Format(DOCUMENTO, xml);
-                    string xmlfirmado = FirmarXml(xmlNofirmado);
+                    string xmlfirmado = FirmarXml(xmlNofirmado, rut);
                     string tkn = await token.getTokenAsync(xmlfirmado);
                     return GetElement(tkn, "TOKEN");
                 }
@@ -54,10 +49,10 @@ namespace LibreDteDotNet.SoapRequest.Services
             return null!;
         }
 
-        private string FirmarXml(string documento)
+        private string FirmarXml(string documento, string rut)
         {
             // https://www.sii.cl/factura_electronica/factura_mercado/autenticacion.pdf
-            X509Certificate2 x509 = GetCertFromPc(Rut!);
+            X509Certificate2 x509 = GetCertFromPc(rut);
             RSA? privateKey = x509.GetRSAPrivateKey();
             try
             {
@@ -100,7 +95,7 @@ namespace LibreDteDotNet.SoapRequest.Services
             }
         }
 
-        internal static X509Certificate2 GetCertFromPc(string rut)
+        private static X509Certificate2 GetCertFromPc(string rut)
         {
             X509Store store = new(StoreName.My, StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);

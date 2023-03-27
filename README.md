@@ -1,10 +1,14 @@
 ﻿![](https://user-images.githubusercontent.com/6364350/227820028-916b3bf1-29b1-406d-8b80-99d27df2b262.png)
 
-[![](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
-[![](https://img.shields.io/github/tag/sergiokml/LibreDteDotNet.SoapRequest.svg)](https://github.com/sergiokml/LibreDteDotNet.SoapRequest/releases)
-[![](https://img.shields.io/github/commit-activity/y/sergiokml/LibreDteDotNet.SoapRequest.svg)](https://github.com/sergiokml/)
-[![](https://img.shields.io/github/contributors-anon/sergiokml/LibreDteDotNet.SoapRequest.svg)](https://github.com/sergiokml/LibreDteDotNet.SoapRequest/contributors)
-[![](https://img.shields.io/github/downloads/sergiokml/LibreDteDotNet.SoapRequest/total.svg)](releases)
+[![](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE.txt)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/y/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/)
+[![GitHub contributors](https://img.shields.io/github/contributors/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/)
+
+[![Nuget](https://img.shields.io/nuget/v/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://www.nuget.org/packages/LibreDteDotNet.SoapRequest/)
+[![Nuget](https://img.shields.io/nuget/dt/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://www.nuget.org/packages/LibreDteDotNet.SoapRequest/)
+
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](../../releases/latest)
+[![GitHub all releases](https://img.shields.io/github/downloads/sergiokml/LibreDteDotNet.SoapRequest/total?style=for-the-badge)](../../releases)
 
 This solution tries to show how to access the information published by the [Servicio de Impuestos Internos](https://www.sii.cl/) through SOAP services. The services are packaged in "Library Class" and can be accessed through Dependency Injection.
 
@@ -24,7 +28,7 @@ It should be noted that this repository has no relationship with the government 
 + Framework .Net >= 5.0.
 + Autofac Framework.
 
-### 🛠 RoadMap
+### 🛠️&nbsp; RoadMap
 
 - [x] Add Feature: "Solicitar y Firmar Token Access" [Autenticación Automática](https://www.sii.cl/factura_electronica/factura_mercado/autenticacion.pdf)
 - [ ] Add Feature: "Consulta de Estado DTE" [Consulta de Estado DTE](https://www.sii.cl/factura_electronica/factura_mercado/autenticacion.pdf)
@@ -51,16 +55,12 @@ IHost host = Host.CreateDefaultBuilder()
                 )
                 .Build();
 ```
-
-
 ---
 Function : GetToken
 ```C#
 var tokenrequest = new TokenRequest("16000555-2");
 var tkn = await tokenrequest.GetToken();
 ```
-
-
 ---
 ### 📫&nbsp; Have a question? Found a Bug? 
 
@@ -70,11 +70,7 @@ Feel free to **file a new issue** with a respective title and description on the
 
 I think that **Knowledge Doesn’t Belong to Just Any One Person**, and I always intend to share my knowledge with other developers, a voluntary monetary contribution or contribute ideas and/or comments to improve these tools would be appreciated.
 
-<p align="center">
-    <a href="https://www.paypal.com/donate/?hosted_button_id=PTKX9BNY96SNJ" target="_blank">
-        <img width="15%" src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="Azure Function">
-    </a>
-</p>
+ [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=PTKX9BNY96SNJ)
 
 
 ### 📘&nbsp; License
