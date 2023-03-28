@@ -11,9 +11,6 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)
 
 
-[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](../../releases/latest)
-[![GitHub all releases](https://img.shields.io/github/downloads/sergiokml/LibreDteDotNet.SoapRequest/total?style=for-the-badge)](../../releases)
-
 # LibreDteDotNet.SoapRequest
 
 This solution tries to show how to access the information published by the [Servicio de Impuestos Internos](https://www.sii.cl/) through SOAP services. The services are packaged in "Library Class" and can be accessed through Dependency Injection.
