@@ -2,13 +2,13 @@
 
 [![](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE.txt)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/)
-[![GitHub contributors](https://img.shields.io/github/contributors/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/)
+[![GitHub contributors](https://img.shields.io/github/contributors/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/LibreDteDotNet.SoapRequest/graphs/contributors/)
 
 
 [![Nuget](https://img.shields.io/nuget/v/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://www.nuget.org/packages/LibreDteDotNet.SoapRequest/)
-[![Nuget](https://img.shields.io/nuget/dt/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://www.nuget.org/packages/LibreDteDotNet.SoapRequest/)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)
-![Lines of code](https://img.shields.io/tokei/lines/github/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)
+[![Nuget](https://img.shields.io/nuget/dt/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://www.nuget.org/stats/packages/LibreDteDotNet.SoapRequest?groupby=Version)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/LibreDteDotNet.SoapRequest)
+[![Lines of code](https://img.shields.io/tokei/lines/github/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/LibreDteDotNet.SoapRequest)
 
 
 # LibreDteDotNet.SoapRequest
