@@ -1,41 +1,40 @@
 ﻿using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using System.ServiceModel.Dispatcher;
+using System.Xml.Linq;
 
 using LibreDteDotNet.SoapRequest.Interfaces;
 
+using Microsoft.Extensions.Configuration;
+
 using ServiceEstadoDte;
+
+using static LibreDteDotNet.SoapRequest.Interfaces.IEstadoDteService;
 
 namespace LibreDteDotNet.SoapRequest.Services
 {
-    public class SecurityTokenMessageInspector : IClientMessageInspector
-    {
-        public object BeforeSendRequest(ref Message request, IClientChannel channel)
-        {
-            request.Headers.Add(MessageHeader.CreateHeader("myToken", string.Empty, ""));
-            return null;
-        }
-
-        public void AfterReceiveReply(ref Message reply, object correlationState) { }
-    }
-
     public class EstadoDteService : IEstadoDteService
     {
-        public async Task<string> GetEstado(
-            string RutConsultante,
-            string DvConsultante,
+        private readonly IConfiguration configuration;
+
+        public EstadoDteService(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
+
+        public async Task<XDocument> GetEstado(
             string RutCompania,
             string DvCompania,
             string RutReceptor,
             string DvReceptor,
-            string TipoDte,
+            TipoDoc TipoDte,
             string FolioDte,
             string FechaEmisionDte,
             string MontoDte,
             string Token
         )
         {
+            string rut = configuration.GetSection("Rut").Value!;
             QueryEstDteClient client = new();
             try
             {
@@ -46,26 +45,23 @@ namespace LibreDteDotNet.SoapRequest.Services
                     HttpRequestMessageProperty.Name,
                     prop
                 );
-                getEstDteResponse response = await client.getEstDteAsync(
-                    new getEstDteRequest()
-                    {
-                        RutConsultante = RutConsultante,
-                        DvConsultante = DvConsultante,
-                        RutReceptor = RutReceptor,
-                        DvReceptor = DvReceptor,
-                        TipoDte = TipoDte,
-                        MontoDte = MontoDte,
-                        FechaEmisionDte = FechaEmisionDte,
-                        DvCompania = DvCompania,
-                        FolioDte = FolioDte,
-                        RutCompania = RutCompania,
-                        Token = Token
-                    }
+                string response = await client.getEstDteAsync(
+                    rut.Split('-').GetValue(0)!.ToString()!,
+                    rut.Split('-').GetValue(1)!.ToString()!,
+                    RutReceptor,
+                    DvReceptor,
+                    ((int)TipoDte).ToString(),
+                    MontoDte,
+                    FechaEmisionDte,
+                    DvCompania,
+                    FolioDte,
+                    RutCompania,
+                    Token
                 );
                 client.Close();
                 if (response != null)
                 {
-                    //
+                    return XDocument.Parse(response);
                 }
             }
             catch (CommunicationException)

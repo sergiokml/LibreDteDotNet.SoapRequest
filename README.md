@@ -53,8 +53,24 @@ IHost host = Host.CreateDefaultBuilder()
 ```
 ---
 #### 📖 [**TokenSeed.GetToken()**](#%EF%B8%8F-roadmap)
+![image](https://user-images.githubusercontent.com/6364350/228638249-434bc817-9d9c-4cb7-ae90-ed16587b220a.png)
 ```C#
 var tkn = await soapRequest.TokenSeed.GetToken("16000555-2");
+```
+#### 📖 [**EstadoDte.GetEstado()**](#%EF%B8%8F-roadmap)
+![image](https://user-images.githubusercontent.com/6364350/228636499-cc71c16e-6416-429a-b8bb-b1a53cd29660.png)
+```C#
+XDocument estado = await soapRequest.EstadoDte.GetEstado(
+  "77522012", // empresa emisor
+  "0",
+  "76888555",  // empresa receptora
+  "4",
+  "33",  // tipo doc
+  "6",    // folio
+  "27032023",  // fecha
+  "931487",   // monto
+  tkn    // token
+);
 ```
 ####
 ---
