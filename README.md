@@ -76,11 +76,11 @@ XDocument estado = await soapRequest.EstadoDte.GetEstado(
 ![image](https://user-images.githubusercontent.com/6364350/228648331-215c5572-52fb-4513-a501-6630140294e1.png)
 ```C#
 XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
-  "76532358",
+  "77522012", // empresa emisor
+  "0",
+  "76888555",  // empresa receptora
   "4",
-  "99003000",
-  "6",
-  IEstadoDteService.TipoDoc.FacturaExentaElectronica,
+  TipoDoc.FacturaExentaElectronica,
   "402268",
   "15032023",
   "1407781",
