@@ -53,7 +53,6 @@ IHost host = Host.CreateDefaultBuilder()
 ```
 ---
 #### 📖 [**TokenSeed.GetToken()**](#%EF%B8%8F-roadmap)
-![image](https://user-images.githubusercontent.com/6364350/228638249-434bc817-9d9c-4cb7-ae90-ed16587b220a.png)
 ```C#
 var tkn = await soapRequest.TokenSeed.GetToken("16000555-2");
 ```
