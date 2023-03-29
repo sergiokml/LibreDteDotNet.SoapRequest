@@ -57,20 +57,39 @@ IHost host = Host.CreateDefaultBuilder()
 var tkn = await soapRequest.TokenSeed.GetToken("16000555-2");
 ```
 #### 📖 [**EstadoDte.GetEstado()**](#%EF%B8%8F-roadmap)
-![image](https://user-images.githubusercontent.com/6364350/228636499-cc71c16e-6416-429a-b8bb-b1a53cd29660.png)
+![image](https://user-images.githubusercontent.com/6364350/228645107-d3d05d31-a99b-49a1-ba62-45fcf024f7a9.png)
 ```C#
 XDocument estado = await soapRequest.EstadoDte.GetEstado(
   "77522012", // empresa emisor
   "0",
   "76888555",  // empresa receptora
   "4",
-  "33",  // tipo doc
+  TipoDoc.FacturaExentaElectronica, // 33 - 34 - 61
   "6",    // folio
   "27032023",  // fecha
   "931487",   // monto
   tkn    // token
 );
 ```
+
+#### 📖 [**EstadoDte.GetEstado()**](#%EF%B8%8F-roadmap)
+![image](https://user-images.githubusercontent.com/6364350/228648331-215c5572-52fb-4513-a501-6630140294e1.png)
+```C#
+XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
+  "76532358",
+  "4",
+  "99003000",
+  "6",
+  IEstadoDteService.TipoDoc.FacturaExentaElectronica,
+  "402268",
+  "15032023",
+  "1407781",
+  "VLVLlBYc3eQ2NtkRxdANRYBQKW9pbG7Y1feuDG/1WZlpAyB43gTIxMYvs9yIrwCy5Z5piK51IF6u\r\nyugfFghOs+97yfjd+pNGzxKG6wpstz2YGAoz+nO4npymFwRT0jueYHWMivHtcQjF+ZddWsGNU6v8\r\nb0AvZPvFqhsAzGRxOfwV3YrmPrqYOBvTvzGWAr+AyB1jYXcSzN/sx31qp3riUbx2KjdE8UeZ2r5Z\r\nuP0BYMEXUt+Eh40ftm95nLPjQppM626xWPdH9FPr6WBBgTCup/HGlefDsxPeZJA2HPeRwuKn78WH\r\niu/Arvf27OQH5MuFWX1ns1fOLHSt6nIhoNIbhQ==",
+  tkn
+);
+```
+
+
 ####
 ---
 ### 📫&nbsp; Have a question? Found a Bug? 

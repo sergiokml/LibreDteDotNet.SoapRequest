@@ -16,6 +16,18 @@ namespace LibreDteDotNet.SoapRequest.Interfaces
             string MontoDte,
             string Token
         );
+        Task<XDocument> GetEstado(
+            string RutCompania,
+            string DvCompania,
+            string RutReceptor,
+            string DvReceptor,
+            TipoDoc TipoDte,
+            string FolioDte,
+            string FechaEmisionDte,
+            string MontoDte,
+            string firma,
+            string Token
+        );
 
         public enum TipoDoc : int
         {

@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 
 using ServiceEstadoDte;
 
+using ServiceEstadoDteAv;
+
 using static LibreDteDotNet.SoapRequest.Interfaces.IEstadoDteService;
 
 namespace LibreDteDotNet.SoapRequest.Services
@@ -56,6 +58,64 @@ namespace LibreDteDotNet.SoapRequest.Services
                     DvCompania,
                     FolioDte,
                     RutCompania,
+                    Token
+                );
+                client.Close();
+                if (response != null)
+                {
+                    return XDocument.Parse(response);
+                }
+            }
+            catch (CommunicationException)
+            {
+                client.Abort();
+            }
+            catch (TimeoutException)
+            {
+                client.Abort();
+            }
+            catch (Exception)
+            {
+                client.Abort();
+                throw;
+            }
+            return null!;
+        }
+
+        public async Task<XDocument> GetEstado(
+            string RutCompania,
+            string DvCompania,
+            string RutReceptor,
+            string DvReceptor,
+            TipoDoc TipoDte,
+            string FolioDte,
+            string FechaEmisionDte,
+            string MontoDte,
+            string firma,
+            string Token
+        )
+        {
+            string rut = configuration.GetSection("Rut").Value!;
+            QueryEstDteAvClient client = new();
+            try
+            {
+                using OperationContextScope ocs = new(client.InnerChannel);
+                HttpRequestMessageProperty prop = new();
+                prop.Headers.Add(HttpRequestHeader.Cookie, $"TOKEN={Token}");
+                OperationContext.Current.OutgoingMessageProperties.Add(
+                    HttpRequestMessageProperty.Name,
+                    prop
+                );
+                string response = await client.getEstDteAvAsync(
+                    RutCompania,
+                    DvCompania,
+                    RutReceptor,
+                    DvReceptor,
+                    ((int)TipoDte).ToString(),
+                    FolioDte,
+                    FechaEmisionDte,
+                    MontoDte,
+                    firma,
                     Token
                 );
                 client.Close();
