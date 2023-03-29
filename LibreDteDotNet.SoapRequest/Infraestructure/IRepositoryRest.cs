@@ -1,4 +1,4 @@
-﻿namespace LibreDteDotNet.RestRequest.Interfaces
+﻿namespace LibreDteDotNet.SoapRequest.Infraestructure
 {
     internal interface IRepositoryRest
     {

@@ -1,14 +1,18 @@
-﻿using ServiceSemilla;
-
-using ServiceToken;
-
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Reflection.Metadata;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Cryptography.Xml;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.ServiceModel.Dispatcher;
 using System.Xml;
 using System.Xml.Linq;
-using System.Security.Cryptography.Xml;
+
 using LibreDteDotNet.SoapRequest.Interfaces;
+
+using ServiceSemilla;
+
+using ServiceToken;
 
 namespace LibreDteDotNet.SoapRequest.Services
 {
@@ -49,7 +53,7 @@ namespace LibreDteDotNet.SoapRequest.Services
             return null!;
         }
 
-        private string FirmarXml(string documento, string rut)
+        private static string FirmarXml(string documento, string rut)
         {
             // https://www.sii.cl/factura_electronica/factura_mercado/autenticacion.pdf
             X509Certificate2 x509 = GetCertFromPc(rut);
@@ -99,15 +103,12 @@ namespace LibreDteDotNet.SoapRequest.Services
         {
             X509Store store = new(StoreName.My, StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-            var cert = store.Certificates
+            X509Certificate2? cert = store.Certificates
                 .Where(c => c.Subject.Contains(rut) && c.NotAfter > DateTime.Now)
                 .FirstOrDefault();
             store.Close();
-            if (cert == null)
-            {
-                throw new Exception($"No existe certificado válido para este rut: {rut}.");
-            }
-            return cert!;
+            return cert
+                ?? throw new Exception($"No existe certificado válido para este rut: {rut}.");
         }
     }
 }

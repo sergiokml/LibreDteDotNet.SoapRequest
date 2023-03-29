@@ -1,13 +1,12 @@
-﻿using Autofac;
-using Autofac.Extensions.DependencyInjection;
+﻿using System.Reflection;
 
-using LibreDteDotNet.RestRequest.Interfaces;
-using LibreDteDotNet.SoapRequest.Infraestructure;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace LibreDteDotNet.RestRequest.Infraestructure
+namespace LibreDteDotNet.SoapRequest.Infraestructure
 {
     public static class ContainerBuild
     {
@@ -27,6 +26,18 @@ namespace LibreDteDotNet.RestRequest.Infraestructure
                 }
             );
             return host;
+        }
+    }
+
+    internal class Container : Autofac.Module
+    {
+        protected override void Load(ContainerBuilder builder)
+        {
+            Assembly? assembly = Assembly.GetExecutingAssembly();
+            _ = builder
+                .RegisterAssemblyTypes(assembly)
+                .Where(t => t.Name.EndsWith("Service"))
+                .AsImplementedInterfaces();
         }
     }
 }

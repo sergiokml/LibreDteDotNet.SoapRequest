@@ -1,14 +1,16 @@
 ﻿using LibreDteDotNet.SoapRequest.Interfaces;
 
-namespace LibreDteDotNet.RestRequest.Infraestructure
+namespace LibreDteDotNet.SoapRequest.Infraestructure
 {
     public class SoapRequest
     {
-        public ITokenSeedService TokenSeedService { get; }
+        public ITokenSeedService TokenSeed { get; }
+        public IEstadoDteService EstadoDte { get; }
 
-        public SoapRequest(ITokenSeedService tokenSeedService)
+        public SoapRequest(ITokenSeedService tokenSeedService, IEstadoDteService estadoDte)
         {
-            TokenSeedService = tokenSeedService;
+            TokenSeed = tokenSeedService;
+            EstadoDte = estadoDte;
         }
     }
 }
