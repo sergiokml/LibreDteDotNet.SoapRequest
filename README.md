@@ -51,12 +51,12 @@ IHost host = Host.CreateDefaultBuilder()
   )
   .Build();
 ```
----
 #### 📖 [**TokenSeed.GetToken()**](#%EF%B8%8F-roadmap)
 ```C#
 var tkn = await soapRequest.TokenSeed.GetToken("16000555-2");
 ```
 #### 📖 [**EstadoDte.GetEstado()**](#%EF%B8%8F-roadmap)
+###### Retorna el ```estado de la aceptación``` de un DTE enviado al SII.
 ![image](https://user-images.githubusercontent.com/6364350/228645107-d3d05d31-a99b-49a1-ba62-45fcf024f7a9.png)
 ```C#
 XDocument estado = await soapRequest.EstadoDte.GetEstado(
@@ -72,6 +72,7 @@ XDocument estado = await soapRequest.EstadoDte.GetEstado(
 );
 ```
 #### 📖 [**EstadoDte.GetEstado()**](#%EF%B8%8F-roadmap)
+###### Retorna el ```estado de la aceptación``` mediante Tag ```DTE/Signature/SignatureValue``` de un DTE enviado al SII.
 ![image](https://user-images.githubusercontent.com/6364350/228648331-215c5572-52fb-4513-a501-6630140294e1.png)
 ```C#
 XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
@@ -88,6 +89,7 @@ XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
 );
 ```
 #### 📖 [**EstadoDte.GetEstadoUp()**](#%EF%B8%8F-roadmap)
+###### Retorna el ```estado del upload``` de un DTE enviado al SII, se debe contar con el Tracl ID del envío.
 ![image](https://user-images.githubusercontent.com/6364350/229174554-3e4942d9-df9a-41e4-b0e1-6951e110f5d6.png)
 ```C#
 ResEstadoDteUp.RESPUESTA validar = await soapRequest.EstadoDte.GetEstadoUp(
