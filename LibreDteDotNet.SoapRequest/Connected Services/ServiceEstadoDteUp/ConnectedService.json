@@ -1,7 +1,7 @@
 {
   "ExtendedData": {
     "inputs": [
-      "https://palena.sii.cl/DTEWS/QueryEstDte.jws?WSDL"
+      "https://palena.sii.cl/DTEWS/QueryEstUp.jws?WSDL"
     ],
     "collectionTypes": [
       "System.Collections.Generic.Dictionary`2",
@@ -10,7 +10,7 @@
     "internalTypeAccess": true,
     "messageContract": true,
     "namespaceMappings": [
-      "*, ServiceEstadoDte"
+      "*, ServiceEstadoDteUp"
     ],
     "targetFramework": "net6.0",
     "typeReuseMode": "None"

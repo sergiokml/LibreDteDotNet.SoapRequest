@@ -37,4 +37,8 @@
     <PackageReference Include="System.ServiceModel.Security" Version="4.10.*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\LibreDteDotNet\LibreDteDotNet.Common\LibreDteDotNet.Common.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -3,6 +3,8 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Xml.Linq;
 
+using LibreDteDotNet.Common;
+using LibreDteDotNet.Common.Models;
 using LibreDteDotNet.SoapRequest.Interfaces;
 
 using Microsoft.Extensions.Configuration;
@@ -11,11 +13,11 @@ using ServiceEstadoDte;
 
 using ServiceEstadoDteAv;
 
-using static LibreDteDotNet.SoapRequest.Interfaces.IEstadoDteService;
+using ServiceEstadoDteUp;
 
 namespace LibreDteDotNet.SoapRequest.Services
 {
-    public class EstadoDteService : IEstadoDteService
+    public class EstadoDteService : ComunEnum, IEstadoDteService
     {
         private readonly IConfiguration configuration;
 
@@ -24,7 +26,7 @@ namespace LibreDteDotNet.SoapRequest.Services
             this.configuration = configuration;
         }
 
-        public async Task<XDocument> GetEstado(
+        public async Task<ResEstadoDte.RESPUESTA> GetEstado(
             string RutCompania,
             string DvCompania,
             string RutReceptor,
@@ -47,23 +49,26 @@ namespace LibreDteDotNet.SoapRequest.Services
                     HttpRequestMessageProperty.Name,
                     prop
                 );
-                string response = await client.getEstDteAsync(
-                    rut.Split('-').GetValue(0)!.ToString()!,
-                    rut.Split('-').GetValue(1)!.ToString()!,
-                    RutReceptor,
-                    DvReceptor,
-                    ((int)TipoDte).ToString(),
-                    MontoDte,
-                    FechaEmisionDte,
-                    DvCompania,
-                    FolioDte,
-                    RutCompania,
-                    Token
+                getEstDteResponse response = await client.getEstDteAsync(
+                    new getEstDteRequest()
+                    {
+                        RutConsultante = rut.Split('-').GetValue(0)!.ToString()!,
+                        DvConsultante = rut.Split('-').GetValue(1)!.ToString()!,
+                        RutCompania = RutReceptor,
+                        DvCompania = DvReceptor,
+                        TipoDte = ((int)TipoDte).ToString(),
+                        MontoDte = MontoDte,
+                        FechaEmisionDte = FechaEmisionDte,
+                        DvReceptor = DvCompania,
+                        FolioDte = FolioDte,
+                        RutReceptor = RutCompania,
+                        Token = Token
+                    }
                 );
                 client.Close();
                 if (response != null)
                 {
-                    return XDocument.Parse(response);
+                    return Deserializa<ResEstadoDte.RESPUESTA>(response.getEstDteReturn);
                 }
             }
             catch (CommunicationException)
@@ -82,7 +87,7 @@ namespace LibreDteDotNet.SoapRequest.Services
             return null!;
         }
 
-        public async Task<XDocument> GetEstado(
+        public async Task<ResEstadoDteAv.RESPUESTA> GetEstado(
             string RutCompania,
             string DvCompania,
             string RutReceptor,
@@ -95,7 +100,6 @@ namespace LibreDteDotNet.SoapRequest.Services
             string Token
         )
         {
-            string rut = configuration.GetSection("Rut").Value!;
             QueryEstDteAvClient client = new();
             try
             {
@@ -106,22 +110,66 @@ namespace LibreDteDotNet.SoapRequest.Services
                     HttpRequestMessageProperty.Name,
                     prop
                 );
-                string response = await client.getEstDteAvAsync(
-                    RutCompania,
-                    DvCompania,
-                    RutReceptor,
-                    DvReceptor,
-                    ((int)TipoDte).ToString(),
-                    FolioDte,
-                    FechaEmisionDte,
-                    MontoDte,
-                    firma,
-                    Token
+                var response = await client.getEstDteAvAsync(
+                    new getEstDteAvRequest()
+                    {
+                        RutEmpresa = RutCompania,
+                        DvEmpresa = DvCompania,
+                        RutReceptor = RutReceptor,
+                        DvReceptor = DvReceptor,
+                        TipoDte = ((int)TipoDte).ToString(),
+                        FolioDte = FolioDte,
+                        FechaEmisionDte = FechaEmisionDte,
+                        MontoDte = MontoDte,
+                        FirmaDte = firma,
+                        Token = Token
+                    }
                 );
                 client.Close();
                 if (response != null)
                 {
-                    return XDocument.Parse(response);
+                    return Deserializa<ResEstadoDteAv.RESPUESTA>(response.getEstDteAvReturn);
+                }
+            }
+            catch (CommunicationException)
+            {
+                client.Abort();
+            }
+            catch (TimeoutException)
+            {
+                client.Abort();
+            }
+            catch (Exception)
+            {
+                client.Abort();
+                throw;
+            }
+            return null!;
+        }
+
+        public async Task<ResEstadoDteUp.RESPUESTA> GetEstadoUp(
+            string RutCompania,
+            string DvCompania,
+            string TrackID,
+            string Token
+        )
+        {
+            QueryEstUpClient client = new();
+            try
+            {
+                getEstUpResponse response = await client.getEstUpAsync(
+                    new getEstUpRequest()
+                    {
+                        RutCompania = RutCompania,
+                        DvCompania = DvCompania,
+                        TrackId = TrackID,
+                        Token = Token
+                    }
+                );
+                client.Close();
+                if (response != null)
+                {
+                    return Deserializa<ResEstadoDteUp.RESPUESTA>(response.getEstUpReturn);
                 }
             }
             catch (CommunicationException)

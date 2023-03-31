@@ -31,7 +31,7 @@ This solution tries to show how to access the information published by the [Serv
 - [x] Add Feature: "Solicitar y Firmar Token Access" [Autenticación Automática](https://www.sii.cl/factura_electronica/factura_mercado/autenticacion.pdf)
 - [x] Add Feature: "Consulta de Estado DTE" [Consulta de Estado DTE](https://www.sii.cl/factura_electronica/factura_mercado/estado_dte.pdf)
 - [x] Add Feature: "Consulta Avanzada Estado de DTE" [Consulta Avanzada Estado de DTE](https://www.sii.cl/factura_electronica/factura_mercado/OIFE2006_QueryEstDteAv_MDE.pdf)
-- [ ] Add Feature: "Consulta de Estado de Upload DTE
+- [x] Add Feature: "Consulta de Estado de Upload DTE
 " [Consulta de Estado de Upload Dte
 ](https://www.sii.cl/factura_electronica/factura_mercado/estado_envio.pdf)
 - [ ] Add Feature: "Web Service de Consulta y Registro de
@@ -71,7 +71,6 @@ XDocument estado = await soapRequest.EstadoDte.GetEstado(
   tkn    // token
 );
 ```
-
 #### 📖 [**EstadoDte.GetEstado()**](#%EF%B8%8F-roadmap)
 ![image](https://user-images.githubusercontent.com/6364350/228648331-215c5572-52fb-4513-a501-6630140294e1.png)
 ```C#
@@ -88,8 +87,17 @@ XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
   tkn
 );
 ```
+#### 📖 [**EstadoDte.GetEstadoUp()**](#%EF%B8%8F-roadmap)
+![image](https://user-images.githubusercontent.com/6364350/229174554-3e4942d9-df9a-41e4-b0e1-6951e110f5d6.png)
+```C#
+ResEstadoDteUp.RESPUESTA validar = await soapRequest.EstadoDte.GetEstadoUp(
+    "76879473",
+    "1",
+    resID,
+    tkn
+);
 
-
+```
 ####
 ---
 ### 📫&nbsp; Have a question? Found a Bug? 

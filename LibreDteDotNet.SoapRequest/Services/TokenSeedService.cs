@@ -47,7 +47,7 @@ namespace LibreDteDotNet.SoapRequest.Services
                 semilla.Abort();
                 throw;
             }
-            return null!;
+            throw new Exception($"Hubo un error al pedir Token.");
         }
 
         private static string FirmarXml(string documento, string rut)

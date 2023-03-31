@@ -18,33 +18,251 @@ namespace ServiceEstadoDteAv
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         //[System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getEstDteAvReturn")]
-        System.Threading.Tasks.Task<string> getEstDteAvAsync(string RutEmpresa, string DvEmpresa, string RutReceptor, string DvReceptor, string TipoDte, string FolioDte, string FechaEmisionDte, string MontoDte, string FirmaDte, string Token);
+        System.Threading.Tasks.Task<ServiceEstadoDteAv.getEstDteAvResponse> getEstDteAvAsync(ServiceEstadoDteAv.getEstDteAvRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getVersionReturn")]
-        System.Threading.Tasks.Task<string> getVersionAsync();
+        System.Threading.Tasks.Task<ServiceEstadoDteAv.getVersionResponse> getVersionAsync(ServiceEstadoDteAv.getVersionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getVersionMayorReturn")]
-        System.Threading.Tasks.Task<string> getVersionMayorAsync();
+        System.Threading.Tasks.Task<ServiceEstadoDteAv.getVersionMayorResponse> getVersionMayorAsync(ServiceEstadoDteAv.getVersionMayorRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getVersionMenorReturn")]
-        System.Threading.Tasks.Task<string> getVersionMenorAsync();
+        System.Threading.Tasks.Task<ServiceEstadoDteAv.getVersionMenorResponse> getVersionMenorAsync(ServiceEstadoDteAv.getVersionMenorRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getVersionPatchReturn")]
-        System.Threading.Tasks.Task<string> getVersionPatchAsync();
+        System.Threading.Tasks.Task<ServiceEstadoDteAv.getVersionPatchResponse> getVersionPatchAsync(ServiceEstadoDteAv.getVersionPatchRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getStateReturn")]
-        System.Threading.Tasks.Task<string> getStateAsync();
+        System.Threading.Tasks.Task<ServiceEstadoDteAv.getStateResponse> getStateAsync(ServiceEstadoDteAv.getStateRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getEstDteAv", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getEstDteAvRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string RutEmpresa;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        public string DvEmpresa;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        public string RutReceptor;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
+        public string DvReceptor;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=4)]
+        public string TipoDte;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=5)]
+        public string FolioDte;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=6)]
+        public string FechaEmisionDte;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=7)]
+        public string MontoDte;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=8)]
+        public string FirmaDte;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=9)]
+        public string Token;
+        
+        public getEstDteAvRequest()
+        {
+        }
+        
+        public getEstDteAvRequest(string RutEmpresa, string DvEmpresa, string RutReceptor, string DvReceptor, string TipoDte, string FolioDte, string FechaEmisionDte, string MontoDte, string FirmaDte, string Token)
+        {
+            this.RutEmpresa = RutEmpresa;
+            this.DvEmpresa = DvEmpresa;
+            this.RutReceptor = RutReceptor;
+            this.DvReceptor = DvReceptor;
+            this.TipoDte = TipoDte;
+            this.FolioDte = FolioDte;
+            this.FechaEmisionDte = FechaEmisionDte;
+            this.MontoDte = MontoDte;
+            this.FirmaDte = FirmaDte;
+            this.Token = Token;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getEstDteAvResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getEstDteAvResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace= "http://DefaultNamespace", Order=0)]
+        public string getEstDteAvReturn;
+        
+        public getEstDteAvResponse()
+        {
+        }
+        
+        public getEstDteAvResponse(string getEstDteAvReturn)
+        {
+            this.getEstDteAvReturn = getEstDteAvReturn;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersion", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionRequest
+    {
+        
+        public getVersionRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string getVersionReturn;
+        
+        public getVersionResponse()
+        {
+        }
+        
+        public getVersionResponse(string getVersionReturn)
+        {
+            this.getVersionReturn = getVersionReturn;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionMayor", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionMayorRequest
+    {
+        
+        public getVersionMayorRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionMayorResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionMayorResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string getVersionMayorReturn;
+        
+        public getVersionMayorResponse()
+        {
+        }
+        
+        public getVersionMayorResponse(string getVersionMayorReturn)
+        {
+            this.getVersionMayorReturn = getVersionMayorReturn;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionMenor", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionMenorRequest
+    {
+        
+        public getVersionMenorRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionMenorResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionMenorResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string getVersionMenorReturn;
+        
+        public getVersionMenorResponse()
+        {
+        }
+        
+        public getVersionMenorResponse(string getVersionMenorReturn)
+        {
+            this.getVersionMenorReturn = getVersionMenorReturn;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionPatch", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionPatchRequest
+    {
+        
+        public getVersionPatchRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionPatchResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionPatchResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string getVersionPatchReturn;
+        
+        public getVersionPatchResponse()
+        {
+        }
+        
+        public getVersionPatchResponse(string getVersionPatchReturn)
+        {
+            this.getVersionPatchReturn = getVersionPatchReturn;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getState", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getStateRequest
+    {
+        
+        public getStateRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getStateResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getStateResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string getStateReturn;
+        
+        public getStateResponse()
+        {
+        }
+        
+        public getStateResponse(string getStateReturn)
+        {
+            this.getStateReturn = getStateReturn;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -97,34 +315,34 @@ namespace ServiceEstadoDteAv
         {
         }
         
-        public System.Threading.Tasks.Task<string> getEstDteAvAsync(string RutEmpresa, string DvEmpresa, string RutReceptor, string DvReceptor, string TipoDte, string FolioDte, string FechaEmisionDte, string MontoDte, string FirmaDte, string Token)
+        public System.Threading.Tasks.Task<ServiceEstadoDteAv.getEstDteAvResponse> getEstDteAvAsync(ServiceEstadoDteAv.getEstDteAvRequest request)
         {
-            return base.Channel.getEstDteAvAsync(RutEmpresa, DvEmpresa, RutReceptor, DvReceptor, TipoDte, FolioDte, FechaEmisionDte, MontoDte, FirmaDte, Token);
+            return base.Channel.getEstDteAvAsync(request);
         }
         
-        public System.Threading.Tasks.Task<string> getVersionAsync()
+        public System.Threading.Tasks.Task<ServiceEstadoDteAv.getVersionResponse> getVersionAsync(ServiceEstadoDteAv.getVersionRequest request)
         {
-            return base.Channel.getVersionAsync();
+            return base.Channel.getVersionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<string> getVersionMayorAsync()
+        public System.Threading.Tasks.Task<ServiceEstadoDteAv.getVersionMayorResponse> getVersionMayorAsync(ServiceEstadoDteAv.getVersionMayorRequest request)
         {
-            return base.Channel.getVersionMayorAsync();
+            return base.Channel.getVersionMayorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<string> getVersionMenorAsync()
+        public System.Threading.Tasks.Task<ServiceEstadoDteAv.getVersionMenorResponse> getVersionMenorAsync(ServiceEstadoDteAv.getVersionMenorRequest request)
         {
-            return base.Channel.getVersionMenorAsync();
+            return base.Channel.getVersionMenorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<string> getVersionPatchAsync()
+        public System.Threading.Tasks.Task<ServiceEstadoDteAv.getVersionPatchResponse> getVersionPatchAsync(ServiceEstadoDteAv.getVersionPatchRequest request)
         {
-            return base.Channel.getVersionPatchAsync();
+            return base.Channel.getVersionPatchAsync(request);
         }
         
-        public System.Threading.Tasks.Task<string> getStateAsync()
+        public System.Threading.Tasks.Task<ServiceEstadoDteAv.getStateResponse> getStateAsync(ServiceEstadoDteAv.getStateRequest request)
         {
-            return base.Channel.getStateAsync();
+            return base.Channel.getStateAsync(request);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

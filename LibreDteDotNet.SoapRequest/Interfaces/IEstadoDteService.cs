@@ -1,11 +1,15 @@
 ﻿using System.ComponentModel;
 using System.Xml.Linq;
 
+using LibreDteDotNet.Common.Models;
+
+using static LibreDteDotNet.Common.ComunEnum;
+
 namespace LibreDteDotNet.SoapRequest.Interfaces
 {
     public interface IEstadoDteService
     {
-        Task<XDocument> GetEstado(
+        Task<ResEstadoDte.RESPUESTA> GetEstado(
             string RutCompania,
             string DvCompania,
             string RutReceptor,
@@ -16,7 +20,7 @@ namespace LibreDteDotNet.SoapRequest.Interfaces
             string MontoDte,
             string Token
         );
-        Task<XDocument> GetEstado(
+        Task<ResEstadoDteAv.RESPUESTA> GetEstado(
             string RutCompania,
             string DvCompania,
             string RutReceptor,
@@ -28,18 +32,11 @@ namespace LibreDteDotNet.SoapRequest.Interfaces
             string firma,
             string Token
         );
-
-        public enum TipoDoc : int
-        {
-            // S = AFECTO IVA
-            [Description("S")]
-            FacturaAfectaElectronica = 33,
-
-            [Description("N")]
-            FacturaExentaElectronica = 34,
-
-            [Description("S")]
-            NotaCreditoElectronica = 61
-        }
+        Task<ResEstadoDteUp.RESPUESTA> GetEstadoUp(
+            string RutCompania,
+            string DvCompania,
+            string TrackID,
+            string Token
+        );
     }
 }
