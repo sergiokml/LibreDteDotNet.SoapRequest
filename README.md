@@ -91,10 +91,10 @@ XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
 ![image](https://user-images.githubusercontent.com/6364350/229174554-3e4942d9-df9a-41e4-b0e1-6951e110f5d6.png)
 ```C#
 ResEstadoDteUp.RESPUESTA validar = await soapRequest.EstadoDte.GetEstadoUp(
-    "77522000",
+    "77522000",     // rut company
     "1",
-    resID,
-    tkn
+    "NGHHHHHHHHHHH",  // ID Track
+    tkn           // token
 );
 
 ```
