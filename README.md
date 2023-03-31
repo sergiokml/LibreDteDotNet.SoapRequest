@@ -75,7 +75,7 @@ XDocument estado = await soapRequest.EstadoDte.GetEstado(
 ![image](https://user-images.githubusercontent.com/6364350/228648331-215c5572-52fb-4513-a501-6630140294e1.png)
 ```C#
 XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
-  "77522012", // empresa emisor
+  "77522000", // empresa emisor
   "0",
   "76888555",  // empresa receptora
   "4",
@@ -91,7 +91,7 @@ XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
 ![image](https://user-images.githubusercontent.com/6364350/229174554-3e4942d9-df9a-41e4-b0e1-6951e110f5d6.png)
 ```C#
 ResEstadoDteUp.RESPUESTA validar = await soapRequest.EstadoDte.GetEstadoUp(
-    "76879473",
+    "77522000",
     "1",
     resID,
     tkn
