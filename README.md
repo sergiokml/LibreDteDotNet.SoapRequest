@@ -9,13 +9,13 @@
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/LibreDteDotNet.SoapRequest)
 [![Lines of code](https://img.shields.io/tokei/lines/github/sergiokml/LibreDteDotNet.SoapRequest?style=for-the-badge)](https://github.com/sergiokml/LibreDteDotNet.SoapRequest)
 
-# LibreDteDotNet.SoapRequest
+#LibreDteDotNet.SoapRequest
 This solution tries to show how to access the information published by the [Servicio de Impuestos Internos](https://www.sii.cl/) through SOAP (WCF) services. The services are packaged in "Library Class" and can be accessed through Dependency Injection.
 
 >This repository has no relationship with the government entity [SII](https://www.sii.cl/), only for educational purposes.
 
 ##
-### ✅&nbsp; Details
+### ✅ Details
 | Reference | version |
 |:--| :--:
 | .Net Core | 6.0 |
@@ -27,19 +27,19 @@ This solution tries to show how to access the information published by the [Serv
 | System.ServiceModel.Http | 4.10.* |
 | System.ServiceModel.NetTcp | 4.10.* |
 
-### 🛠️&nbsp; RoadMap
-- [x] Add Feature: "Solicitar y Firmar Token Access" [Autenticación Automática](https://www.sii.cl/factura_electronica/factura_mercado/autenticacion.pdf)
-- [x] Add Feature: "Consulta de Estado DTE" [Consulta de Estado DTE](https://www.sii.cl/factura_electronica/factura_mercado/estado_dte.pdf)
-- [x] Add Feature: "Consulta Avanzada Estado de DTE" [Consulta Avanzada Estado de DTE](https://www.sii.cl/factura_electronica/factura_mercado/OIFE2006_QueryEstDteAv_MDE.pdf)
-- [x] Add Feature: "Consulta de Estado de Upload DTE
+### 🛠️ RoadMap
+- [x] "Solicitar y Firmar Token Access" [Autenticación Automática](https://www.sii.cl/factura_electronica/factura_mercado/autenticacion.pdf)
+- [x] "Consulta de Estado DTE" [Consulta de Estado DTE](https://www.sii.cl/factura_electronica/factura_mercado/estado_dte.pdf)
+- [x] "Consulta Avanzada Estado de DTE" [Consulta Avanzada Estado de DTE](https://www.sii.cl/factura_electronica/factura_mercado/OIFE2006_QueryEstDteAv_MDE.pdf)
+- [x] "Consulta de Estado de Upload DTE
 " [Consulta de Estado de Upload Dte
 ](https://www.sii.cl/factura_electronica/factura_mercado/estado_envio.pdf)
-- [ ] Add Feature: "Web Service de Consulta y Registro de
+- [ ] "Web Service de Consulta y Registro de
 Aceptación/Reclamo a DTE recibido" [Web Service de Consulta y Registro de
 Aceptación/Reclamo a DTE recibido](https://www.sii.cl/factura_electronica/Webservice_Registro_Reclamo_DTE_V1.1.pdf)
 
 
-### 🚀&nbsp; Usage
+### 🚀 Usage
 This class is accessed via dependency injection:
 ```C#
 IHost host = Host.CreateDefaultBuilder()
@@ -72,7 +72,7 @@ XDocument estado = await soapRequest.EstadoDte.GetEstado(
 );
 ```
 #### 📖 [**EstadoDte.GetEstado()**](#%EF%B8%8F-roadmap)
-###### Retorna el ```estado de la aceptación``` mediante Tag ```DTE/Signature/SignatureValue``` de un DTE enviado al SII.
+###### Retorna el ```estado de la aceptación``` mediante la entrega del Tag ```DTE/Signature/SignatureValue``` desde un DTE ya enviado al SII.
 ![image](https://user-images.githubusercontent.com/6364350/228648331-215c5572-52fb-4513-a501-6630140294e1.png)
 ```C#
 XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
@@ -89,7 +89,7 @@ XDocument estadoAv = await soapRequest.EstadoDte.GetEstado(
 );
 ```
 #### 📖 [**EstadoDte.GetEstadoUp()**](#%EF%B8%8F-roadmap)
-###### Retorna el ```estado del upload``` de un DTE enviado al SII, se debe contar con el Tracl ID del envío.
+###### Retorna el ```estado del upload``` de un DTE enviado al SII, se debe contar con el Track ID del envío.
 ![image](https://user-images.githubusercontent.com/6364350/229174554-3e4942d9-df9a-41e4-b0e1-6951e110f5d6.png)
 ```C#
 ResEstadoDteUp.RESPUESTA validar = await soapRequest.EstadoDte.GetEstadoUp(
@@ -102,11 +102,11 @@ ResEstadoDteUp.RESPUESTA validar = await soapRequest.EstadoDte.GetEstadoUp(
 ```
 ####
 ---
-### 📫&nbsp; Have a question? Found a Bug? 
+### 📫 Have a question? Found a Bug? 
 Feel free to **file a new issue** with a respective title and description on the [LibreDteDotNet.SoapRequest/issues](https://github.com/sergiokml/LibreDteDotNet.SoapRequest/issues) repository.
-### ❤️&nbsp; Community and Contributions
+### ❤️ Community and Contributions
 I think that **Knowledge Doesn’t Belong to Just Any One Person**, and I always intend to share my knowledge with other developers, a voluntary monetary contribution or contribute ideas and/or comments to improve these tools would be appreciated.
 
  [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=PTKX9BNY96SNJ)
-### 📘&nbsp; License
+### 📘 License
 All my repository content is released under the terms of the [MIT License](LICENSE.txt).
