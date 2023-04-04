@@ -86,7 +86,11 @@ var estadoAv = await soapRequest.EstadoDteAv.GetEstado(
   "402268",    // folio
   "15032023",  // fecha
   "1407781",   // monto
-  "VLVLlBYc3eQ2NtkRxdANRYBQKW9pbG7Y1feuDG/1WZlpAyB43gTIxMYvs9yIrwCy5Z5piK51IF6u\r\nyugfFghOs+97yfjd+pNGzxKG6wpstz2YGAoz+nO4npymFwRT0jueYHWMivHtcQjF+ZddWsGNU6v8\r\nb0AvZPvFqhsAzGRxOfwV3YrmPrqYOBvTvzGWAr+AyB1jYXcSzN/sx31qp3riUbx2KjdE8UeZ2r5Z\r\nuP0BYMEXUt+Eh40ftm95nLPjQppM626xWPdH9FPr6WBBgTCup/HGlefDsxPeZJA2HPeRwuKn78WH\r\niu/Arvf27OQH5MuFWX1ns1fOLHSt6nIhoNIbhQ==",
+  "VLVLlBYc3eQ2NtkRxdANRYBQKW9pbG7Y1feuDG/1WZlpAyB43gTIxMYvs9yIrwCy5Z5piK51IF6u
+  nyugfFghOs+97yfjd+pNGzxKG6wpstz2YGAoz+nO4npymFwRT0jueYHWMivHtcQjF+ZddWsGNU6v8
+  nb0AvZPvFqhsAzGRxOfwV3YrmPrqYOBvTvzGWAr+AyB1jYXcSzN/sx31qp3riUbx2KjdE8UeZ2r5Z
+  nuP0BYMEXUt+Eh40ftm95nLPjQppM626xWPdH9FPr6WBBgTCup/HGlefDsxPeZJA2HPeRwuKn78WH
+  niu/Arvf27OQH5MuFWX1ns1fOLHSt6nIhoNIbhQ==",
   tkn                 // token
 )
   .AsObject();          // Important!  (resultado como clase) or
