@@ -174,7 +174,7 @@ namespace LibreDteDotNet.SoapRequest.Services
                 client.Close();
                 if (response != null)
                 {
-                    //  RespuestaTo = response;
+                    RespuestaTo = response;
                     return this;
                 }
             }
