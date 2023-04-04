@@ -1,6 +1,6 @@
 ﻿namespace LibreDteDotNet.SoapRequest.Interfaces
 {
-    public interface ITokenSeedService
+    public interface ITokenSeed
     {
         Task<string> GetToken(string rut);
     }

@@ -4,10 +4,11 @@
       "https://palena.sii.cl/DTEWS/GetTokenFromSeed.jws?WSDL"
     ],
     "collectionTypes": [
-      "System.Array",
-      "System.Collections.Generic.Dictionary`2"
+      "System.Collections.Generic.Dictionary`2",
+      "System.Collections.Generic.List`1"
     ],
     "internalTypeAccess": true,
+    "messageContract": true,
     "namespaceMappings": [
       "*, ServiceToken"
     ],

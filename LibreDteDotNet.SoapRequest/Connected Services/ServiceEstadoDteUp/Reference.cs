@@ -201,7 +201,7 @@ namespace ServiceEstadoDteUp
     [System.ServiceModel.MessageContractAttribute(WrapperName="getEstUpResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
     internal partial class getEstUpResponse
     {
-        
+        // CUSTOM (NAMESPACE)
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace= "http://DefaultNamespace", Order=0)]
         public string getEstUpReturn;
         

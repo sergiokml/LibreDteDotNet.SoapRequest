@@ -17,29 +17,174 @@ namespace ServiceSemilla
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        //[System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getSeedReturn")]
-        System.Threading.Tasks.Task<string> getSeedAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getVersionMayorReturn")]
-        System.Threading.Tasks.Task<string> getVersionMayorAsync();
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        System.Threading.Tasks.Task<ServiceSemilla.getVersionMayorResponse> getVersionMayorAsync(ServiceSemilla.getVersionMayorRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getVersionMenorReturn")]
-        System.Threading.Tasks.Task<string> getVersionMenorAsync();
+        System.Threading.Tasks.Task<ServiceSemilla.getVersionMenorResponse> getVersionMenorAsync(ServiceSemilla.getVersionMenorRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getVersionPatchReturn")]
-        System.Threading.Tasks.Task<string> getVersionPatchAsync();
+        System.Threading.Tasks.Task<ServiceSemilla.getVersionPatchResponse> getVersionPatchAsync(ServiceSemilla.getVersionPatchRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
+        //[System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        System.Threading.Tasks.Task<ServiceSemilla.getSeedResponse> getSeedAsync(ServiceSemilla.getSeedRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="getStateReturn")]
-        System.Threading.Tasks.Task<string> getStateAsync();
+        System.Threading.Tasks.Task<ServiceSemilla.getStateResponse> getStateAsync(ServiceSemilla.getStateRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionMayor", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionMayorRequest
+    {
+        
+        public getVersionMayorRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionMayorResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionMayorResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string getVersionMayorReturn;
+        
+        public getVersionMayorResponse()
+        {
+        }
+        
+        public getVersionMayorResponse(string getVersionMayorReturn)
+        {
+            this.getVersionMayorReturn = getVersionMayorReturn;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionMenor", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionMenorRequest
+    {
+        
+        public getVersionMenorRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionMenorResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionMenorResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string getVersionMenorReturn;
+        
+        public getVersionMenorResponse()
+        {
+        }
+        
+        public getVersionMenorResponse(string getVersionMenorReturn)
+        {
+            this.getVersionMenorReturn = getVersionMenorReturn;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionPatch", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionPatchRequest
+    {
+        
+        public getVersionPatchRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getVersionPatchResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getVersionPatchResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string getVersionPatchReturn;
+        
+        public getVersionPatchResponse()
+        {
+        }
+        
+        public getVersionPatchResponse(string getVersionPatchReturn)
+        {
+            this.getVersionPatchReturn = getVersionPatchReturn;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getSeed", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getSeedRequest
+    {
+        
+        public getSeedRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getSeedResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getSeedResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace= "http://DefaultNamespace", Order=0)]
+        public string getSeedReturn;
+        
+        public getSeedResponse()
+        {
+        }
+        
+        public getSeedResponse(string getSeedReturn)
+        {
+            this.getSeedReturn = getSeedReturn;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getState", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getStateRequest
+    {
+        
+        public getStateRequest()
+        {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getStateResponse", WrapperNamespace="http://DefaultNamespace", IsWrapped=true)]
+    internal partial class getStateResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        public string getStateReturn;
+        
+        public getStateResponse()
+        {
+        }
+        
+        public getStateResponse(string getStateReturn)
+        {
+            this.getStateReturn = getStateReturn;
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -92,29 +237,29 @@ namespace ServiceSemilla
         {
         }
         
-        public System.Threading.Tasks.Task<string> getSeedAsync()
+        public System.Threading.Tasks.Task<ServiceSemilla.getVersionMayorResponse> getVersionMayorAsync(ServiceSemilla.getVersionMayorRequest request)
         {
-            return base.Channel.getSeedAsync();
+            return base.Channel.getVersionMayorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<string> getVersionMayorAsync()
+        public System.Threading.Tasks.Task<ServiceSemilla.getVersionMenorResponse> getVersionMenorAsync(ServiceSemilla.getVersionMenorRequest request)
         {
-            return base.Channel.getVersionMayorAsync();
+            return base.Channel.getVersionMenorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<string> getVersionMenorAsync()
+        public System.Threading.Tasks.Task<ServiceSemilla.getVersionPatchResponse> getVersionPatchAsync(ServiceSemilla.getVersionPatchRequest request)
         {
-            return base.Channel.getVersionMenorAsync();
+            return base.Channel.getVersionPatchAsync(request);
         }
         
-        public System.Threading.Tasks.Task<string> getVersionPatchAsync()
+        public System.Threading.Tasks.Task<ServiceSemilla.getSeedResponse> getSeedAsync(ServiceSemilla.getSeedRequest request)
         {
-            return base.Channel.getVersionPatchAsync();
+            return base.Channel.getSeedAsync(request);
         }
         
-        public System.Threading.Tasks.Task<string> getStateAsync()
+        public System.Threading.Tasks.Task<ServiceSemilla.getStateResponse> getStateAsync(ServiceSemilla.getStateRequest request)
         {
-            return base.Channel.getStateAsync();
+            return base.Channel.getStateAsync(request);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

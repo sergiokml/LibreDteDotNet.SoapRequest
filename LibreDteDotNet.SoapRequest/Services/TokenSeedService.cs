@@ -3,9 +3,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
 using System.ServiceModel;
 using System.Xml;
-using System.Xml.Linq;
-
-using LibreDteDotNet.SoapRequest.Interfaces;
 
 using ServiceSemilla;
 
@@ -13,7 +10,7 @@ using ServiceToken;
 
 namespace LibreDteDotNet.SoapRequest.Services
 {
-    public class TokenSeedService : ITokenSeedService
+    public class TokenSeedService : ITokenSeed
     {
         private const string DOCUMENTO = "<getToken><item><Semilla>{0}</Semilla></item></getToken>";
 
@@ -23,16 +20,16 @@ namespace LibreDteDotNet.SoapRequest.Services
             GetTokenFromSeedClient token = new();
             try
             {
-                string seed = await semilla.getSeedAsync();
+                getSeedResponse seed = await semilla.getSeedAsync(new getSeedRequest());
+                semilla.Close();
                 if (seed != null)
                 {
-                    string xml = GetElement(seed, "SEMILLA");
-                    string xmlNofirmado = string.Format(DOCUMENTO, xml);
-                    string xmlfirmado = FirmarXml(xmlNofirmado, rut);
-                    string tkn = await token.getTokenAsync(xmlfirmado);
-                    return GetElement(tkn, "TOKEN");
+                    string xml = GetElement(seed.getSeedReturn, "SEMILLA");
+                    getTokenResponse tkn = await token.getTokenAsync(
+                        new getTokenRequest(FirmarXml(string.Format(DOCUMENTO, xml), rut))
+                    );
+                    return GetElement(tkn.getTokenReturn, "TOKEN");
                 }
-                semilla.Close();
             }
             catch (CommunicationException)
             {

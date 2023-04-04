@@ -1,16 +1,33 @@
-﻿using LibreDteDotNet.SoapRequest.Interfaces;
+﻿global using System.Xml.Linq;
+
+global using LibreDteDotNet.SoapRequest.Interfaces;
+
+global using static LibreDteDotNet.Common.ComunEnum;
+global using static LibreDteDotNet.Common.Models.ResEstadoDte;
 
 namespace LibreDteDotNet.SoapRequest.Infraestructure
 {
     public class SoapRequest
     {
-        public ITokenSeedService TokenSeed { get; }
-        public IEstadoDteService EstadoDte { get; }
+        public ITokenSeed TokenSeed { get; }
+        public IEstadoDte EstadoDte { get; }
+        public IEstadoDteUp EstadoDteUp { get; }
+        public IEstadoDteAv EstadoDteAv { get; }
+        public IRegistroDte RegistroDte { get; set; }
 
-        public SoapRequest(ITokenSeedService tokenSeedService, IEstadoDteService estadoDte)
+        public SoapRequest(
+            ITokenSeed tokenSeed,
+            IEstadoDte estadoDte,
+            IEstadoDteUp estadoDteUp,
+            IEstadoDteAv estadoDteAv,
+            IRegistroDte registroDte
+        )
         {
-            TokenSeed = tokenSeedService;
+            TokenSeed = tokenSeed;
             EstadoDte = estadoDte;
+            EstadoDteUp = estadoDteUp;
+            EstadoDteAv = estadoDteAv;
+            RegistroDte = registroDte;
         }
     }
 }
