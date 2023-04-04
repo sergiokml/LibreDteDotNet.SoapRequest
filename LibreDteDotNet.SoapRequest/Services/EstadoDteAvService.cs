@@ -4,8 +4,6 @@ using System.ServiceModel.Channels;
 
 using ServiceEstadoDteAv;
 
-using ServiceRegistro;
-
 namespace LibreDteDotNet.SoapRequest.Services
 {
     public class EstadoDteAvService : IEstadoDteAv
@@ -74,107 +72,6 @@ namespace LibreDteDotNet.SoapRequest.Services
                 if (response != null)
                 {
                     GetEstDteAvResponse = response;
-                    return this;
-                }
-            }
-            catch (CommunicationException)
-            {
-                client.Abort();
-            }
-            catch (TimeoutException)
-            {
-                client.Abort();
-            }
-            catch (System.Exception)
-            {
-                client.Abort();
-                throw;
-            }
-            return null!;
-        }
-    }
-
-    public class RegistroDteService : IRegistroDte
-    {
-        private respuestaTo? RespuestaTo { get; set; }
-
-        public async Task<IRegistroDte> Ingresar(
-            string rutEmisor,
-            string dvEmisor,
-            TipoDoc TipoDte,
-            string FolioDte,
-            string Token,
-            Accion accion
-        )
-        {
-            RegistroReclamoDteServiceClient client = new();
-            try
-            {
-                using OperationContextScope ocs = new(client.InnerChannel);
-                HttpRequestMessageProperty prop = new();
-                prop.Headers.Add(HttpRequestHeader.Cookie, $"TOKEN={Token}");
-                OperationContext.Current.OutgoingMessageProperties.Add(
-                    HttpRequestMessageProperty.Name,
-                    prop
-                );
-                respuestaTo response = await client.ingresarAceptacionReclamoDocAsync(
-                    rutEmisor,
-                    dvEmisor,
-                    ((int)TipoDte).ToString(),
-                    FolioDte,
-                    accion.ToString()
-                );
-                client.Close();
-                if (response != null)
-                {
-                    RespuestaTo = response;
-                    return this;
-                }
-            }
-            catch (CommunicationException)
-            {
-                client.Abort();
-            }
-            catch (TimeoutException)
-            {
-                client.Abort();
-            }
-            catch (System.Exception)
-            {
-                client.Abort();
-                throw;
-            }
-            return null!;
-        }
-
-        public async Task<IRegistroDte> Listar(
-            string rutEmisor,
-            string dvEmisor,
-            TipoDoc TipoDte,
-            string FolioDte,
-            string Token
-        )
-        {
-            RegistroReclamoDteServiceClient client = new();
-            using OperationContextScope ocs = new(client.InnerChannel);
-            HttpRequestMessageProperty prop = new();
-            prop.Headers.Add(HttpRequestHeader.Cookie, $"TOKEN={Token}");
-            OperationContext.Current.OutgoingMessageProperties.Add(
-                HttpRequestMessageProperty.Name,
-                prop
-            );
-            try
-            {
-                respuestaTo response = await client.listarEventosHistDocAsync(
-                    rutEmisor,
-                    dvEmisor,
-                    ((int)TipoDte).ToString(),
-                    FolioDte
-                );
-                client.Close();
-                if (response != null)
-                {
-                    RespuestaTo = response;
                     return this;
                 }
             }

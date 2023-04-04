@@ -14,23 +14,4 @@
             string Token
         );
     }
-
-    public interface IRegistroDte
-    {
-        Task<IRegistroDte> Ingresar(
-            string RutCompania,
-            string DvCompania,
-            TipoDoc TipoDte,
-            string FolioDte,
-            string Token,
-            Accion accion
-        );
-        Task<IRegistroDte> Listar(
-            string rutEmisor,
-            string dvEmisor,
-            TipoDoc TipoDte,
-            string FolioDte,
-            string Token
-        );
-    }
 }
