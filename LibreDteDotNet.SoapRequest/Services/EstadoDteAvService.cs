@@ -117,19 +117,19 @@ namespace LibreDteDotNet.SoapRequest.Services
                     HttpRequestMessageProperty.Name,
                     prop
                 );
-                //var response = await client.ingresarAceptacionReclamoDocAsync(
-                //    rutEmisor,
-                //    dvEmisor,
-                //    ((int)TipoDte).ToString(),
-                //    FolioDte,
-                //    accion.ToString()
-                //);
-                //client.Close();
-                //if (response != null)
-                //{
-                //    //RespuestaTo = response;
-                //    return this;
-                //}
+                respuestaTo response = await client.ingresarAceptacionReclamoDocAsync(
+                    rutEmisor,
+                    dvEmisor,
+                    ((int)TipoDte).ToString(),
+                    FolioDte,
+                    accion.ToString()
+                );
+                client.Close();
+                if (response != null)
+                {
+                    RespuestaTo = response;
+                    return this;
+                }
             }
             catch (CommunicationException)
             {
@@ -165,7 +165,7 @@ namespace LibreDteDotNet.SoapRequest.Services
             );
             try
             {
-                var response = await client.listarEventosHistDocAsync(
+                respuestaTo response = await client.listarEventosHistDocAsync(
                     rutEmisor,
                     dvEmisor,
                     ((int)TipoDte).ToString(),

@@ -217,23 +217,23 @@ namespace ServiceRegistro
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        //[System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ServiceRegistro.respuestaTo> consultarDocDteCedibleAsync(string rutEmisor, string dvEmisor, string tipoDoc, string folio);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        //[System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string> consultarFechaRecepcionSiiAsync(string rutEmisor, string dvEmisor, string tipoDoc, string folio);
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        //[System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<string> getVersionAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="", ReplyAction="*")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ServiceRegistro.Exception), Action="", Name="Exception")]
-        //[System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
+        //[System.ServiceModel.FaultContractAttribute(typeof(ServiceRegistro.Exception), Action="", Name="Exception")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         System.Threading.Tasks.Task<ServiceRegistro.respuestaTo> ingresarAceptacionReclamoDocAsync(string rutEmisor, string dvEmisor, string tipoDoc, string folio, string accionDoc);
         
