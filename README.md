@@ -123,7 +123,7 @@ var registro = await soapRequest.RegistroDte.IngresarAccion(
   Accion.RFP          // ACD - RCD - ERM - RFP - RFT
 );
 ```
-#### 📖 [**RegistroDte.IngresarAccion()**](#%EF%B8%8F-roadmap)
+#### 📖 [**RegistroDte.ListarEventos()**](#%EF%B8%8F-roadmap)
 ###### Retorna lista de eventos relacionados con un DTE.
 ```C#
 var eventos = await soapRequest.RegistroDte.ListarEventos(
