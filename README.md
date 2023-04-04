@@ -37,7 +37,10 @@ This solution tries to show how to access the information published by the [Serv
 - [x] "Web Service de Consulta y Registro de
 Aceptación/Reclamo a DTE recibido" [Web Service de Consulta y Registro de
 Aceptación/Reclamo a DTE recibido](https://www.sii.cl/factura_electronica/Webservice_Registro_Reclamo_DTE_V1.1.pdf)
-
+  - [x] Ingresar Reclamo y/ Aceptación DTE.
+  - [x] Obtener listado de eventos relacionados con un DTE.
+  - [ ] Consultar fecha de recepción en SII de un DTE.
+  - [ ] Consultar información de un DTE Cedible.
 
 ### 🚀 Usage
 This class is accessed via dependency injection:
