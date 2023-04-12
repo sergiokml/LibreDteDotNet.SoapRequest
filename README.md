@@ -54,12 +54,21 @@ IHost host = Host.CreateDefaultBuilder()
   )
   .Build();
 ```
-#### 📖 [**TokenSeed.GetToken()**](#%EF%B8%8F-roadmap)
+For calling you needs implements  [**Json Options pattern**](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-6.0) in your project. The -*digital certificate*- must be installed in your system, this project does not need to know the password.
+```json
+{
+ "Rut": "16000555-2"  
+}
+
+```
+---
+###  🐾 Examples
+#### 📖 [**TokenSeed.GetToken()**](#-roadmap)
 For calling you needs implements  [**Json Options pattern**](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-6.0) in your project. The -*digital certificate*- must be installed in your system, this project does not need to know the password.
 ```C#
 var tkn = await soapRequest.TokenSeed.GetToken("16000555-2");
 ```
-#### 📖 [**EstadoDte.GetEstado()**](#%EF%B8%8F-roadmap)
+#### 📖 [**EstadoDte.GetEstado()**](#-roadmap)
 ###### Retorna el ```estado de la aceptación``` de un DTE enviado al SII.
 ```C#
 var estado = await soapRequest.EstadoDte
@@ -77,7 +86,7 @@ var estado = await soapRequest.EstadoDte
   .AsObject();          // Important!  (resultado como clase) or
   // AsXDocument();     // Important   (resultado como XML)
 ```
-#### 📖 [**EstadoDteAv.GetEstado()**](#%EF%B8%8F-roadmap)
+#### 📖 [**EstadoDteAv.GetEstado()**](#-roadmap)
 ###### Retorna el ```estado de la aceptación``` mediante la entrega del Tag ```DTE/Signature/SignatureValue``` desde un DTE ya enviado al SII. 
 ```C#
 var estadoAv = await soapRequest.EstadoDteAv.GetEstado(
@@ -99,7 +108,7 @@ var estadoAv = await soapRequest.EstadoDteAv.GetEstado(
   .AsObject();          // Important!  (resultado como clase) or
   // AsXDocument();     // Important   (resultado como XML)
 ```
-#### 📖 [**EstadoDteUp.GetEstado()**](#%EF%B8%8F-roadmap)
+#### 📖 [**EstadoDteUp.GetEstado()**](#-roadmap)
 ###### Retorna el ```estado del upload``` de un DTE enviado al SII, se debe contar con el Track ID del envío.
 ```C#
 var estadoUp = await soapRequest.EstadoDteUp.GetEstado(
@@ -111,7 +120,7 @@ var estadoUp = await soapRequest.EstadoDteUp.GetEstado(
   .AsObject();          // Important!  (resultado como clase) or
   // AsXDocument();     // Important   (resultado como XML)
 ```
-#### 📖 [**RegistroDte.IngresarAccion()**](#%EF%B8%8F-roadmap)
+#### 📖 [**RegistroDte.IngresarAccion()**](#-roadmap)
 ###### Ingresa un resgistro de Aceptación y/o Reclamo de un DTE recibido.
 ```C#
 var registro = await soapRequest.RegistroDte.IngresarAccion(
@@ -123,7 +132,7 @@ var registro = await soapRequest.RegistroDte.IngresarAccion(
   Accion.RFP          // ACD - RCD - ERM - RFP - RFT
 );
 ```
-#### 📖 [**RegistroDte.ListarEventos()**](#%EF%B8%8F-roadmap)
+#### 📖 [**RegistroDte.ListarEventos()**](#-roadmap)
 ###### Retorna lista de eventos relacionados con un DTE.
 ```C#
 var eventos = await soapRequest.RegistroDte.ListarEventos(
