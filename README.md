@@ -64,7 +64,6 @@ For calling you needs implements  [**Json Options pattern**](https://learn.micro
 ---
 ###  🐾 Examples
 #### 📖 [**TokenSeed.GetToken()**](#-roadmap)
-For calling you needs implements  [**Json Options pattern**](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-6.0) in your project. The -*digital certificate*- must be installed in your system, this project does not need to know the password.
 ```C#
 var tkn = await soapRequest.TokenSeed.GetToken("16000555-2");
 ```

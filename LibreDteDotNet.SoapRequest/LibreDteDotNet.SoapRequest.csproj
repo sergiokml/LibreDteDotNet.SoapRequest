@@ -12,7 +12,7 @@
 	  <PackageTags>sii,siichile,libredte,dte,xml,firma,electronica,servicio,impuestos,internos</PackageTags>
 	  <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 	  <PackageProjectUrl>https://github.com/sergiokml/LibreDteDotNet.SoapRequest</PackageProjectUrl>
-	  <Authors>sergiokml</Authors>
+	  <Authors>$(AssemblyName)</Authors>
   </PropertyGroup>
 
   <ItemGroup>
